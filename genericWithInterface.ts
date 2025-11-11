@@ -1,4 +1,4 @@
-interface Developer<T> {
+interface Developer<T, X = null> {
   name: string;
   salary: number;
   device: {
@@ -8,6 +8,7 @@ interface Developer<T> {
   };
 
   smarWatch: T;
+  bike?: X;
 }
 
 // type BrandCharaWatch = {
@@ -26,10 +27,16 @@ interface AppleWatch {
   heartRate: string;
   callsupport: boolean;
   calculator: boolean;
-  AiFeature: boolean;  
+  AiFeature: boolean;
 }
 
-const poorDeveloper: Developer<BrandCharaWatch> = {
+const poorDeveloper: Developer<
+  BrandCharaWatch,
+  {
+    brand: string;
+    engineCapacity: string;
+  }
+> = {
   name: "Mr. Poor",
   salary: 20,
   device: {
@@ -41,6 +48,10 @@ const poorDeveloper: Developer<BrandCharaWatch> = {
     heartRate: "180",
     stopwatch: true,
   },
+  bike: {
+    brand: "Yamaha",
+    engineCapacity: "200cc"
+  }
 };
 
 const richDeveloper: Developer<AppleWatch> = {
@@ -57,4 +68,5 @@ const richDeveloper: Developer<AppleWatch> = {
     calculator: true,
     AiFeature: true,
   },
+  bike: null,
 };
