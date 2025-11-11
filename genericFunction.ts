@@ -36,7 +36,7 @@ const res2 = createArayTupleWithGeneric(222, {
   designation: "manager",
 });
 
-//
+//generic function
 
 const addStudentTocourse = <T>(studentInfo: T) => {
   return {
@@ -57,5 +57,5 @@ const student2 = {
   isMarried: true,
 };
 
-const result = addStudentTocourse(student1);
+const result = addStudentTocourse(student2);
 console.log(result);
