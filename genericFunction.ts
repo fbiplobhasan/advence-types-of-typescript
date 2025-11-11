@@ -36,26 +36,26 @@ const res2 = createArayTupleWithGeneric(222, {
   designation: "manager",
 });
 
-//generic function
+// //generic function
 
-const addStudentTocourse = <T>(studentInfo: T) => {
-  return {
-    course: "Next Level",
-    ...studentInfo,
-  };
-};
+// const addStudentTocourse = <T>(studentInfo: T) => {
+//   return {
+//     course: "Next Level",
+//     ...studentInfo,
+//   };
+// };
 
-const student1 = {
-  id: 123,
-  name: "Mezba",
-  hasPen: true,
-};
-const student2 = {
-  id: 321,
-  name: "Jhankar Mahbub",
-  hasCar: true,
-  isMarried: true,
-};
+// const student1 = {
+//   id: 123,
+//   name: "Mezba",
+//   hasPen: true,
+// };
+// const student2 = {
+//   id: 321,
+//   name: "Jhankar Mahbub",
+//   hasCar: true,
+//   isMarried: true,
+// };
 
-const result = addStudentTocourse(student2);
-console.log(result);
+// const result = addStudentTocourse(student2);
+// console.log(result);
