@@ -20,3 +20,24 @@ type Coordinates<X,Y> = [X,Y];
 
 const coordinates1: Coordinates<string,string> = ['2','8']
 const coordinates2: Coordinates<number,number> = [2,4]
+
+const userList:GenericArray<{
+    name: string, age: number,
+}> = [
+    {
+        name: 'Mr. X',
+        age: 22,
+    },
+    {
+        name: 'Mr. Y',
+        age: 25,
+    },
+    {
+        name: 'Mr. U',
+        age: 23,
+    },
+    // {
+    //     favouriteColor:'black'
+    // },
+    
+]
