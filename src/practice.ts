@@ -123,21 +123,37 @@
 
 // const add: AddFunc = (num1, num2) => num1 + num2;
 
-type Employee = {
-  id: string;
-  name: string;
-  phonNo: string;
-};
-type Manager = {
-  designation: string;
-  teamSize: number;
-};
-type EmployeeManager = Employee & Manager;
+// *union
+// type UserRole = "admin" | "user";
 
-const chowDhuryShaheb: EmployeeManager = {
-  id: "123",
-  name: "Chowdhury Shaheb",
-  phonNo: "211432",
-  designation: "manager coo operative",
-  teamSize: 25,
-};
+// const getDashboard = (role: UserRole) => {
+//   if (role === "admin") {
+//     return "Admin Dashboard";
+//   } else if (role === "user") {
+//     return "User Dashboard";
+//   } else {
+//     return "Guest Dashboard";
+//   }
+// };
+
+// getDashboard("user");
+
+// * intersection
+// type Employee = {
+//   id: string;
+//   name: string;
+//   phonNo: string;
+// };
+// type Manager = {
+//   designation: string;
+//   teamSize: number;
+// };
+// type EmployeeManager = Employee & Manager;
+
+// const chowDhuryShaheb: EmployeeManager = {
+//   id: "123",
+//   name: "Chowdhury Shaheb",
+//   phonNo: "211432",
+//   designation: "manager coo operative",
+//   teamSize: 25,
+// };
