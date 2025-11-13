@@ -235,3 +235,11 @@
 // discounteCalculator(100);
 // discounteCalculator("100 tk");
 // discounteCalculator(null);
+
+// * never
+
+// const throwError = (msg: string):never => {
+//     throw new Error (msg)
+// }
+
+// throwError('Error...')
