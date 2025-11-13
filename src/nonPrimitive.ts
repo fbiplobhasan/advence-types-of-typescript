@@ -9,7 +9,7 @@
 //   // or
 //   // organization: "Programming Hero";
 //   firsName: string;
-//   middleName: string;
+//   middleName?: string;
 //   lastName: string;
 //   isMarried: boolean;
 // } = {
