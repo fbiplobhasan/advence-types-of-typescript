@@ -243,3 +243,82 @@
 // }
 
 // throwError('Error...')
+
+// ! module 2 (1) Video
+// // * type assertion
+// const kgToGMConverter = (
+//   input: string | number
+// ): string | number | undefined => {
+//   if (typeof input === "number") {
+//     return input * 1000;
+//   } else if (typeof input === "string") {
+//     const [value] = input.split(" ");
+//     return `Converted output is: ${Number(value) * 1000}`;
+//   }
+// };
+
+// const result1 = kgToGMConverter(3) as number;
+// console.log(result1);
+// const result2 = kgToGMConverter("2 kg") as string;
+// console.log(result2);
+
+// // * Custome error (another video)
+// type CustomError = {
+//   message: string;
+// };
+
+// try {
+// } catch (err) {
+//   console.log((err as CustomError).message);
+// }
+
+//* interface array,object,function er khetre kaj kore
+
+// type User = {
+//   name: string;
+//   age: number;
+// };
+
+// interface IUser {
+//   name: string;
+//   age: number;
+// }
+
+// type Role = {
+//   role: "admin" | "user";
+// };
+
+// type UserWithRole = User & Role;
+
+// interface IUserWithRole extends IUser {
+//   role: "admin" | "user";
+// }
+
+// const user1: UserWithRole = {
+//   name: "Mezba",
+//   age: 22,
+//   role: "user",
+// };
+// const user2: IUserWithRole = {
+//   name: "Mezba",
+//   age: 22,
+//   role: "admin",
+// };
+
+// *function interface use
+
+// type Add = (num1: number, num2: number) => number;
+
+// interface IAdd {
+//   (num1: number, num2: number): number;
+// }
+
+// const add: IAdd = (num1, num2) => num1 + num2;
+
+// type Friends = string[];
+
+// interface IFriends {
+//   [index: number]: string;
+// }
+
+// const friends: IFriends = ["A", "B", "C", "D"];
