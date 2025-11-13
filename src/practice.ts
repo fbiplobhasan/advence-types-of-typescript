@@ -119,6 +119,25 @@
 // const myName: Name = "Me.X";
 
 // * function type alias
-type AddFunc = (num1: number, num2: number) => number;
+// type AddFunc = (num1: number, num2: number) => number;
 
-const add: AddFunc = (num1, num2) => num1 + num2;
+// const add: AddFunc = (num1, num2) => num1 + num2;
+
+type Employee = {
+  id: string;
+  name: string;
+  phonNo: string;
+};
+type Manager = {
+  designation: string;
+  teamSize: number;
+};
+type EmployeeManager = Employee & Manager;
+
+const chowDhuryShaheb: EmployeeManager = {
+  id: "123",
+  name: "Chowdhury Shaheb",
+  phonNo: "211432",
+  designation: "manager coo operative",
+  teamSize: 25,
+};
