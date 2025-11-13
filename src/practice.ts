@@ -157,3 +157,51 @@
 //   designation: "manager coo operative",
 //   teamSize: 25,
 // };
+
+// * ternary operator
+// const biyerJonnoEligble = (age: number) => {
+//   // if(age >= 21){
+//   //     console.log("You are eligible.");
+//   // } else{
+//   //     console.log("You are not eligible");
+//   // }
+//   const result = age >= 21 ? "You are eligible" : "You are not eligble.";
+//   console.log(result);
+// };
+
+// biyerJonnoEligble(22);
+
+// * nullish coalescing operator
+//* ata kaj korbe just null and undefined er upor
+
+// const userTheme = undefined;
+// const selectedTheme = userTheme ?? 'Light theme';
+// console.log(selectedTheme);
+
+// // *difference between nullish and ternary
+// const isAuthenticated = '';
+
+// // ternary
+// const resultWithTernary = isAuthenticated ? isAuthenticated : "You are guest!";
+
+// // nullish coalescing
+// const resultWithNullish = isAuthenticated ?? "You are guest";
+
+// console.log({resultWithNullish,resultWithTernary});
+
+//* optional chaining
+// const user: {
+//   name: string;
+//   address: {
+//     city: string;
+//     postalCode?: string;
+//   };
+// } = {
+//   name: "azahar",
+//   address: {
+//     city: "Rangpur",
+//   },
+// };
+
+// const postalcode = user?.address?.postalCode;
+// console.log(postalcode);
