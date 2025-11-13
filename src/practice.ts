@@ -205,3 +205,33 @@
 
 // const postalcode = user?.address?.postalCode;
 // console.log(postalcode);
+
+// ** nullable,never and unknown
+
+//* nullable type
+// const getUser = (input: string | null) => {
+//   if (input) {
+//     console.log(`From DB: ${input}`);
+//   } else {
+//     console.log(`from DB: ALL USER`);
+//   }
+// };
+
+// getUser("Hasan")
+
+//* unknown type
+// const discounteCalculator = (input: unknown) => {
+//   if (typeof input === "number") {
+//     const discountedPrice = input * 0.1;
+//     console.log(discountedPrice);
+//   } else if (typeof input === "string") {
+//     const [amount] = input.split(" ");
+//     console.log(Number(amount) * 0.1);
+//   } else {
+//     console.log("Wrong input.");
+//   }
+// };
+
+// discounteCalculator(100);
+// discounteCalculator("100 tk");
+// discounteCalculator(null);
