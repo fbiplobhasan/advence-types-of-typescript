@@ -322,3 +322,33 @@
 // }
 
 // const friends: IFriends = ["A", "B", "C", "D"];
+
+// * generic array
+
+// type GenericArray<T> = Array<T>;
+
+// const friends: Array<string> = ["A", "D", "E"];
+// const rollNumber: Array<number> = [4, 5, 6, 4];
+// const booleantype: Array<boolean> = [true, false, true];
+
+// * Tuple
+// type Coordinates<X, Y> = [X, Y];
+// const coordinates1: Coordinates<number, number> = [20, 30];
+// const coordinates2: Coordinates<string, string> = ["20", "30"];
+
+// *Array of object
+// type GenericArray<T> = Array<T>;
+
+// const users:GenericArray<{
+//     name: string,
+//     age: number
+// }> = [
+//     {
+//         name: 'mr X',
+//         age: 22,
+//     },
+//     {
+//         name: 'mr U',
+//         age: 62,
+//     },
+// ]
