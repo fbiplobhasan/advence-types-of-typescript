@@ -475,54 +475,123 @@
 // const result = addStudentToCourse(student2);
 // console.log(result);
 
-class Person {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
+//* Type guard using instance of
+// class Person {
+//   name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+//   getSleep(numOfHours: number) {
+//     console.log(`${this.name} Doinik ${numOfHours} Ghonta Ghumay`);
+//   }
+// }
+
+// class Student extends Person {
+//   constructor(name: string) {
+//     super(name);
+//   }
+//   doStudy(numOfHours: number) {
+//     console.log(`${this.name} Doinik ${numOfHours} Ghonta Study Kore`);
+//   }
+// }
+
+// class Teacher extends Person {
+//   constructor(name: string) {
+//     super(name);
+//   }
+//   takeClass(numOfHours: number) {
+//     console.log(`${this.name} Doinik ${numOfHours} Ghonta Class Nay`);
+//   }
+// }
+
+// // function guard
+// const isStudent = (user: Person) => {
+//   return user instanceof Student;
+// };
+
+// const isTeacher = (user: Person) => {
+//   return user instanceof Teacher;
+// };
+
+// const getUserInfo = (user: Person) => {
+//   if (isStudent(user)) {
+//     user.doStudy(10);
+//   } else if (isTeacher(user)) {
+//     user.takeClass(60);
+//   } else {
+//     user.getSleep(15);
+//   }
+// };
+
+// const student1 = new Student("Mr Student");
+// const teacher1 = new Teacher(" Mr Teacher");
+
+// getUserInfo(teacher1);
+
+//* Access Modifiers
+// class Bankaccount {
+//   public readonly userId: number;
+//   public userName: string;
+//   private userBalance: number;
+// //   protected userBalance: number;
+
+//   constructor(userId: number, userName: string, userBalance: number) {
+//     this.userId = userId;
+//     this.userName = userName;
+//     this.userBalance = userBalance;
+//   }
+//   addBalance(balance: number) {
+//     this.userBalance = this.userBalance + balance;
+//   }
+// }
+
+// const mezbaBhai = new Bankaccount(111, "mezba", 20);
+// mezbaBhai.addBalance(100);
+// console.log(mezbaBhai);
+
+// * getter and setter function
+// class BankAccount {
+//   userId: number;
+//   userName: string;
+//   _userBalance: number;
+
+//   constructor(userId: number, userName: string, userBalance: number) {
+//     this.userId = userId;
+//     this.userName = userName;
+//     this._userBalance = userBalance;
+//   }
+
+//   //   addBalance(balance: number) {
+//   //     this._userBalance = this._userBalance + balance;
+//   //   }
+
+//   // setter use kora korte chai
+//   set addBalance(amount: number) {
+//     this._userBalance = this._userBalance + amount;
+//   }
+
+//   //   getter use kore get korte chai
+//   get getBalance() {
+//     return this._userBalance;
+//   }
+// }
+
+// const mezbaVai = new BankAccount(222, "Mezba", 30);
+// mezbaVai.addBalance = 100;
+// console.log(mezbaVai);
+
+// *Static
+
+class Counter {
+  count: number = 0;
+
+  increment() {
+    return (this.count = this.count + 1);
   }
-  getSleep(numOfHours: number) {
-    console.log(`${this.name} Doinik ${numOfHours} Ghonta Ghumay`);
+  decrement() {
+    return (this.count = this.count - 1);
   }
 }
 
-class Student extends Person {
-  constructor(name: string) {
-    super(name);
-  }
-  doStudy(numOfHours: number) {
-    console.log(`${this.name} Doinik ${numOfHours} Ghonta Study Kore`);
-  }
-}
-
-class Teacher extends Person {
-  constructor(name: string) {
-    super(name);
-  }
-  takeClass(numOfHours: number) {
-    console.log(`${this.name} Doinik ${numOfHours} Ghonta Class Nay`);
-  }
-}
-
-// function guard
-const isStudent = (user: Person) => {
-  return user instanceof Student;
-};
-
-const isTeacher = (user: Person) => {
-  return user instanceof Teacher;
-};
-
-const getUserInfo = (user: Person) => {
-  if (isStudent(user)) {
-    user.doStudy(10);
-  } else if (isTeacher(user)) {
-    user.takeClass(60);
-  } else {
-    user.getSleep(15);
-  }
-};
-
-const student1 = new Student("Mr Student");
-const teacher1 = new Teacher(" Mr Teacher");
-
-getUserInfo(teacher1);
+const instance1 = new Counter();
+console.log(instance1.increment());
