@@ -336,19 +336,193 @@
 // const coordinates1: Coordinates<number, number> = [20, 30];
 // const coordinates2: Coordinates<string, string> = ["20", "30"];
 
-// *Array of object
+// *Array of object generic with type alias
+// type User = {
+//   name: string;
+//   age: number;
+// };
 // type GenericArray<T> = Array<T>;
 
-// const users:GenericArray<{
-//     name: string,
-//     age: number
-// }> = [
-//     {
-//         name: 'mr X',
-//         age: 22,
-//     },
-//     {
-//         name: 'mr U',
-//         age: 62,
-//     },
-// ]
+// const users: GenericArray<User> = [
+//   {
+//     name: "mr X",
+//     age: 22,
+//   },
+//   {
+//     name: "mr U",
+//     age: 62,
+//   },
+// ];
+
+// * Generic with interface
+// interface Developer<T, X = null> {
+//   name: string;
+//   salary: number;
+//   device: {
+//     brand: string;
+//     model: string;
+//     releasedYear: string;
+//   };
+//   smartWatch: T;
+//   bike?: X;
+// }
+
+// interface BrandCharaWatch {
+//   heartRate: string;
+//   stopwatch: boolean;
+// }
+
+// interface AppleWatch {
+//   heartRate: string;
+//   callSupport: boolean;
+//   calculator: boolean;
+//   AiFeature: boolean;
+// }
+// interface Bike {
+//   brand: "Yamaha";
+//   engineCapacity: "200cc";
+// }
+
+// const poorDeveloper: Developer<BrandCharaWatch, Bike> = {
+//   name: "Mr Poor",
+//   salary: 20,
+//   device: {
+//     brand: "lenovo",
+//     model: "lf33",
+//     releasedYear: "2025",
+//   },
+//   smartWatch: {
+//     heartRate: "200",
+//     stopwatch: true,
+//   },
+// };
+
+// const richDeveloper: Developer<AppleWatch> = {
+//   name: "Mr Poor",
+//   salary: 100,
+//   device: {
+//     brand: "hp",
+//     model: "lf33",
+//     releasedYear: "2030",
+//   },
+//   smartWatch: {
+//     heartRate: "200",
+//     callSupport: true,
+//     calculator: true,
+//     AiFeature: true,
+//   },
+//   bike: null,
+// };
+
+// * generic function
+// const createArrayWithString = (value: string) => [value];
+
+// const createArrayWithNumber = (value: number) => [value];
+
+// const createArrayWithObj = (value: { id: number; name: string }) => {
+//   return [value];
+// };
+
+// const createArrayWithGeneric = <T>(value: T) => {
+//   return [value];
+// };
+
+// const arrString = createArrayWithGeneric("Apple");
+// const arrNum = createArrayWithGeneric(204);
+// const arrObj = createArrayWithGeneric({
+//   id: 123,
+//   name: "azmain fayek",
+// });
+
+// * Tuple
+
+// const createArrayWithTuple = (
+//   param1: { id: string; name: string },
+//   param2: string
+// ) => [param1, param2];
+
+// * Generic with Tuple
+// const createArrayTupleWithGeneric = <X, Y>(param1: X, param2: Y) => [
+//   param1,
+//   param2,
+// ];
+
+// const res1 = createArrayTupleWithGeneric("Mezba", false);
+// const res2 = createArrayTupleWithGeneric(222, {
+//   name: "Mezba",
+// });
+
+// const addStudentToCourse = <T>(studentInfo: T) => {
+//   return {
+//     course: "Next Level",
+//     ...studentInfo,
+//   };
+// };
+
+// const student1 = {
+//   id: 123,
+//   name: "Mezba",
+//   hasPen: true,
+// };
+
+// const student2 = {
+//   id: 321,
+//   name: "jhankar",
+//   hasCar: true,
+//   isMarried: true,
+// };
+
+// const result = addStudentToCourse(student2);
+// console.log(result);
+
+class Person {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  getSleep(numOfHours: number) {
+    console.log(`${this.name} Doinik ${numOfHours} Ghonta Ghumay`);
+  }
+}
+
+class Student extends Person {
+  constructor(name: string) {
+    super(name);
+  }
+  doStudy(numOfHours: number) {
+    console.log(`${this.name} Doinik ${numOfHours} Ghonta Study Kore`);
+  }
+}
+
+class Teacher extends Person {
+  constructor(name: string) {
+    super(name);
+  }
+  takeClass(numOfHours: number) {
+    console.log(`${this.name} Doinik ${numOfHours} Ghonta Class Nay`);
+  }
+}
+
+// function guard
+const isStudent = (user: Person) => {
+  return user instanceof Student;
+};
+
+const isTeacher = (user: Person) => {
+  return user instanceof Teacher;
+};
+
+const getUserInfo = (user: Person) => {
+  if (isStudent(user)) {
+    user.doStudy(10);
+  } else if (isTeacher(user)) {
+    user.takeClass(60);
+  } else {
+    user.getSleep(15);
+  }
+};
+
+const student1 = new Student("Mr Student");
+const teacher1 = new Teacher(" Mr Teacher");
+
+getUserInfo(teacher1);
