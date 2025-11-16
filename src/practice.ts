@@ -859,7 +859,6 @@
 
 // type EmployeeManager = Employee & Manager
 
-
 // const ChowDhuryShaheb: EmployeeManager ={
 //     id: "68746454",
 //     name: "Choudhri shaheb",
@@ -868,3 +867,70 @@
 //     teamSize: 50,
 
 // }
+
+// const biyerJonnoEligible = (age: number) => {
+//   // if(age >= 20){
+//   //     console.log("Biyer jonno eligible.");
+//   // }else{
+//   //     console.log("Biyer jonno not eligible");
+//   // }
+//   const result =
+//     age >= 21 ? "Biyer jonno eligible." : "Biyer jonno not eligible";
+//   console.log(result);
+// };
+
+// biyerJonnoEligible(21);
+
+// const userTheme = undefined;
+// const userTheme = null;
+// const selectedTheme = userTheme ?? "Lisht theme";
+// console.log(selectedTheme);
+// // null and undefined er upor vitti kore kak kore.
+
+// const isAuthenticated = '';
+
+// const resultWNullish = isAuthenticated ?? "You are guest!";
+// const resultWTer = isAuthenticated ? "isAuthenticatd" : "You are guest.";
+
+// console.log("nullish", resultWNullish, "Ternary", resultWTer);
+
+// const user: {
+//   address: {
+//     city: string;
+//     town: string;
+//     postalCode?: string;
+//   };
+// } = {
+//   address: {
+//     city: "Banani",
+//     town: "Dhaka",
+//   },
+// };
+
+// const postalCode = user?.address?.postalCode;
+// console.log(postalCode);
+
+// *nullable type
+// const getUser = (input: string) => {
+//   if (input) {
+//     console.log(`From DB: ${input}`);
+//   } else {
+//     console.log("From DB: ALL USER");
+//   }
+// };
+
+// getUser("Hasan")
+
+// const discountCalculator = (input: unknown) => {
+//   if (typeof input === "number") {
+//     const discountedPrice = input * 0.1;
+//     console.log(discountedPrice);
+//   } else if (typeof input === "string") {
+//     const [amount] = input.split(" ");
+//     console.log(Number(amount) * 0.1);
+//   }
+// };
+
+// discountCalculator(100);
+// discountCalculator("100 tk");
+// discountCalculator(null);
