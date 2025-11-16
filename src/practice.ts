@@ -928,9 +928,17 @@
 //   } else if (typeof input === "string") {
 //     const [amount] = input.split(" ");
 //     console.log(Number(amount) * 0.1);
-//   }
+//   } else{
+    // console.log("Invalid input");    
+// }
 // };
 
 // discountCalculator(100);
 // discountCalculator("100 tk");
 // discountCalculator(null);
+
+// const throwError = (msg: string): never => {
+//   throw new Error(msg);
+// };
+
+// throwError("Error...");
