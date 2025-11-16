@@ -582,29 +582,289 @@
 
 // *Static
 
-class Counter {
-  static count: number = 0;
+// class Counter {
+//   static count: number = 0;
 
-  static increment() {
-    return (Counter.count = Counter.count + 1);
-  }
-  static decrement() {
-    return (Counter.count = Counter.count - 1);
-  }
-}
+//   static increment() {
+//     return (Counter.count = Counter.count + 1);
+//   }
+//   static decrement() {
+//     return (Counter.count = Counter.count - 1);
+//   }
+// }
 
-// const instance1 = new Counter();
-console.log(Counter.increment());
-console.log(Counter.increment());
-console.log(Counter.increment());
+// // const instance1 = new Counter();
+// console.log(Counter.increment());
+// console.log(Counter.increment());
+// console.log(Counter.increment());
 
-// const instance2 = new Counter()
-console.log(Counter.increment());
-console.log(Counter.increment());
-console.log(Counter.increment());
+// // const instance2 = new Counter()
+// console.log(Counter.increment());
+// console.log(Counter.increment());
+// console.log(Counter.increment());
+
+// // const instance3 = new Counter()
+// console.log(Counter.increment());
+// console.log(Counter.increment());
+// console.log(Counter.increment());
+
+// *polimorphism bohurupi
+// class Person {
+//   getSleep() {
+//     console.log(`I am a normal person. I sleep for 8 hours`);
+//   }
+// }
+// class Student extends Person {
+//   getSleep() {
+//     console.log(`I am a student. I sleep for 7 hours`);
+//   }
+// }
+// class NextLevelDeveloper extends Person {
+//   getSleep() {
+//     console.log(`I am a Next Level Developer. I sleep for 6 hours`);
+//   }
+// }
+
+// const getSleepingHours = (param: Person) => {
+//   param.getSleep();
+// };
+
+// const person1 = new Person();
+// const person2 = new Student();
+// const person3 = new NextLevelDeveloper();
+
+// getSleepingHours(person3);
+
+// class Shape {
+//   getArea(): number {
+//     return 0;
+//   }
+// }
+
+// class Circle extends Shape {
+//   // area = pi*r*r
+//   radius: number;
+//   constructor(radius: number) {
+//     super();
+//     this.radius = radius;
+//   }
+//   getArea(): number {
+//     return Math.PI * this.radius * this.radius;
+//   }
+// }
+
+// class Rectangle extends Shape {
+//   height: number;
+//   width: number;
+
+//   constructor(height: number, width: number) {
+//     super();
+//     this.height = height;
+//     this.width = width;
+//   }
+//   getArea(): number {
+//     return this.height * this.width;
+//   }
+// }
+
+// const getArea = (param: Shape) => {
+//   console.log(param.getArea());
+// };
+
+// const shape1 = new Shape();
+// const shape2 = new Circle(10);
+// const shape3 = new Rectangle(10, 20);
+
+// getArea(shape3);
+
+// class Shape {
+//   getArea(): number {
+//     return 0;
+//   }
+// }
+
+// class Circle extends Shape {
+//   radius: number;
+
+//   constructor(radius: number) {
+//     super();
+//     this.radius = radius;
+//   }
+//   getArea(): number {
+//     return Math.PI * this.radius * this.radius;
+//   }
+// }
+
+// class Ractangle extends Shape {
+//   height: number;
+//   width: number;
+
+//   constructor(height: number, width: number) {
+//     super();
+//     this.height = height;
+//     this.width = width;
+//   }
+//   getArea(): number {
+//     return this.height * this.width;
+//   }
+// }
+
+// const getArea = (param: Shape) => {
+//   console.log(param.getArea());
+// };
+
+// const shape1 = new Shape();
+// const shape2 = new Circle(10);
+// const shape3 = new Ractangle(10, 20);
+
+// getArea(shape1);
+
+// const poorUser = {
+//   name: "PH",
+//   organization: "Hero",
+//   balance: 0,
+//   addBalance(vaue: number) {
+//     const totalBalance = this.balance + vaue;
+//     return totalBalance;
+//   },
+// };
+
+// poorUser.addBalance(100000);
+
+// const arr: number[] = [1, 2, 5, 6, 5];
+
+// const aqrArray = arr.map((elem: number) => elem * elem);
+// console.log(aqrArray);
+
+// const friends = ["rahim", "karim"];
+// const schoolFriends = ["pintu", "cintu", "bulbul"];
+// const collegeFriends = ["Mr smart", "Babla", "Hasan"];
+
+// friends.push(...schoolFriends)
+// console.log(friends);
+
+// const user = {
+//   name: "Mezba",
+//   phoneNumber: "017855465",
+// };
+// const otherInfo = {
+//   hobby: "Outing",
+//   favouriteColor: "Black",
+// };
+// console.log(otherInfo, user);
+// // otherInfo.hobby = "GhoraGhuri";
+
+// const UserInfo = { ...user, ...otherInfo, hobby2: "Outing new" };
+// console.log(UserInfo);
+
+// const sendInvite = (...friends: string[]) => {
+//   friends.map((friend: string) => {
+//     console.log(`Send invitation to ${friend}`);
+//   });
+// };
+
+// sendInvite("a", "j", "j", "d", "e");
+
+// const user = {
+//   name: "azahar sharker",
+//   age: 23,
+//   address: {
+//     village: "Hyatkha",
+//     Upazilla: "Ulipur",
+//     Division: "Kurigram",
+//   },
+//   favouriteColor: "black",
+// };
+
+// const { name, address: {Upazilla}, favouriteColor } = user;
+// console.log(name,Upazilla, favouriteColor);
+
+// const friends = ["a", "j", "j", "d", "e"];
+// const [,,,d,]=friends
+// console.log(friends[3]);
+
+// type User = {
+//   id: number;
+//   name: {
+//     firstName: string;
+//     middleName?: string;
+//     lastName: string;
+//   };
+//   gender: "male" | "female";
+//   contactNo: number;
+//   address: {
+//     division: string;
+//     city: string;
+//     village: string;
+//   };
+// };
+
+// const user1: User = {
+//   id: 12345,
+//   name: {
+//     firstName: "Mr X",
+//     lastName: "Mr Y",
+//   },
+//   gender: "male",
+//   contactNo: 171789391,
+//   address: {
+//     division: "Rangpur",
+//     city: "Kurigram",
+//     village: "Zugipara",
+//   },
+// };
+// const user2: User = {
+//   id: 123457855,
+//   name: {
+//     firstName: "Mr T",
+//     lastName: "Mr L",
+//   },
+//   gender: "female",
+//   contactNo: 17178946546,
+//   address: {
+//     division: "Dhaka",
+//     city: "Ulipur",
+//     village: "Kashir khamar",
+//   },
+// };
+
+// type AddFunc = (num1: number, num2: number) => number;
+
+// const add: AddFunc = (num1, num2) => num1 + num2;
+
+// type UserRole = "admin" | "user";
+
+// const getDashboard = (role: UserRole) => {
+//   if (role === "admin") {
+//     return "admin dashboard";
+//   } else if (role === "user") {
+//     return "user dashboard";
+//   } else {
+//     return "guest dashboard";
+//   }
+// };
+
+// console.log(getDashboard("user"));
+
+// type Employee = {
+//   id: string;
+//   name: string;
+//   phoneNo: string;
+// };
+
+// type Manager = {
+//   designation: string;
+//   teamSize: number;
+// };
+
+// type EmployeeManager = Employee & Manager
 
 
-// const instance3 = new Counter()
-console.log(Counter.increment());
-console.log(Counter.increment());
-console.log(Counter.increment());
+// const ChowDhuryShaheb: EmployeeManager ={
+//     id: "68746454",
+//     name: "Choudhri shaheb",
+//     phoneNo:'45664445456',
+//     designation: "EmployeeManager",
+//     teamSize: 50,
+
+// }
